@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+@{
+    Layout = null;
+}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @{
+        ViewData["Title"] = "Login";
+    }
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../vendors/bootstrap/dist/css/bootstrap.min.css" >
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../vendors/font-awesome/css/font-awesome.min.css" >
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="../vendors/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+</head>
+
+@model PmsWebApi.Models.Users
+@*<h1>Login</h1>*@
+
+@using (Html.BeginForm("Login", "Users", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @if (@ViewBag.Message != null)
+    {
+        <div style="border: 1px solid red">
+            @ViewBag.Message
+        </div>
+    }
+
+    <body class="login">
+        <div>
+            <a class="hiddenanchor" id="signup"></a>
+            <a class="hiddenanchor" id="signin"></a>
+
+            <div class="login_wrapper">
+                <div class="animate form login_form">
+                    <section class="login_content">
+
+                        @*<table>
+                                <tr>
+                                    <td>  @Html.LabelFor(a => a.UserName)</td>
+                                    <td>  @Html.TextBoxFor(a => a.UserName)</td>
+                                    <td>  @Html.ValidationMessageFor(a => a.UserName)</td>
+                                </tr>
+                                <tr>
+                                    <td>   @Html.LabelFor(a => a.Password)            </td>
+                                    <td>   @Html.PasswordFor(a => a.Password)            </td>
+                                    <td>   @Html.ValidationMessageFor(a => a.Password)            </td>
+                                </tr>
+                                <tr>
+
+                                    <td>
+                                        <input type="submit" value="Login" />
+                                    </td>
+
+                                </tr>
+                            </table>*@
+
+
+                        <h1> PMS - Login Page</h1>
+                        <div>
+
+                            @Html.Label("Username")
+                            @Html.TextBoxFor(a => a.UserName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(a => a.UserName)
+
+                        </div>
+                        <div>
+                            @Html.Label("Password")
+                            @Html.PasswordFor(a => a.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(a => a.Password)
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <div>
+                            <br />
+                            <input type="submit" class="btn btn-primary" value="Login" />
+                            <a class="reset_pass" href="#">Lost your password?</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link">
+                                New to site?
+                                @Html.ActionLink("Register New User", "Create", new { })
+                            </p>
+
+                            <div class="clearfix"></div>
+                            <br />
+
+                            <div>
+                                <h1><i class="fa fa-building"></i> PMS  </h1>
+                                <p>©2020 All Rights Reserved.<br /> PMS has been developed by Mbonisi Tshuma. </p>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+
+            </div>
+        </div>
+    </body>
+
+
+}
+

@@ -1,0 +1,50 @@
+﻿@model PmsWebApi.Models.Rent
+
+@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1> Rental Statement for: @Context.Session.GetString("Username")  </h1>
+
+@using (Html.BeginForm())
+{
+
+
+
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel">
+                <div class="x_content">
+                    <table class="table">
+                        <thead></thead>
+                        <tbody>
+                            <tr>
+                                <td> Invoice Number </td>
+                                <td> @Html.DisplayFor(m => m.InvoiceNumber) </td>
+                            </tr>
+                            <tr>
+                                <td> Lease Number </td>
+                                <td>  @Html.DisplayFor(m => m.LeaseNumber) </td>
+                            </tr>
+                            <tr>
+                                <td> Amount Due </td>
+                                <td> R  @Html.DisplayFor(m => m.AmountDue) </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-group-lg  btn-warning pms-btn">
+        @Html.ActionLink("Pay Rent ", "OnceOff", "Payment", new { AmountDue = Model.AmountDue })
+    </button>
+}
+
+
+
+
+

@@ -1,0 +1,67 @@
+﻿@model PmsWebApi.Models.TenantLease
+
+@using Microsoft.AspNetCore.Http;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1> View Lease Agreement </h1>
+
+<h3> Lease Agreement for: </h3>
+
+@Html.DisplayFor(Model => Model.IdNumber)
+
+<br />
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <table class="table">
+        <thead></thead>
+        <tbody>
+            <tr>
+                <td> Rental </td>
+                <td> @Html.DisplayFor(m => m.Rental) </td>
+            </tr>
+
+            <tr>
+                <td> Unit Number </td>
+                <td> @Html.DisplayFor(m => m.UnitNumber) </td>
+            </tr>
+
+        
+
+            <tr>
+                <td> Id Number </td>
+                <td> @Html.DisplayFor(m => m.IdNumber) </td>
+            </tr>
+
+            <tr>
+                <td> LeaseNumber</td>
+                <td> @Html.DisplayFor(m => m.LeaseNumber) </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button>
+        @Html.ActionLink("Create Renewal", "Create", "TenantLeaseRenewal", new { LeaseNumber = Model.LeaseNumber })
+    </button>
+
+    <button>
+        @Html.ActionLink("View Previous Renewals", "Index", "TenantLeaseRenewal", new { LeaseNumber = Model.LeaseNumber })
+    </button>
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+﻿@model PmsWebApi.Models.Maintenance
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <table class="table">
+                    <thead></thead>
+                    <tbody>
+                        <tr>
+                            <td> User Id </td>
+                            <td> @Html.DisplayFor(m => m.LogId) </td>
+                        </tr>
+
+                        <tr>
+                            <td> FirstName </td>
+                            <td>  @Html.DisplayFor(m => m.IdNumber) </td>
+                        </tr>
+
+                        <tr>
+                            <td> LastName: </td>
+                            <td>  @Html.DisplayFor(m => m.CallDescription) </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-group-lg btn-warning">
+                    @Html.ActionLink("Edit", "Edit", new { LogId = Model.LogId })
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+}
+
+
+

@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1> Main Dashboard </h1>
+
+
+<div class="row top_tiles">
+    <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="tile-stats">
+            <div class="icon"><i class="fa fa-caret-square-o-right"></i></div>
+            <div class="count">  Tenant Component  </div>
+            <h3> ........ </h3>
+            <button class="btn btn-group-lg pms-btn">
+                @Html.ActionLink("View Tenant Profiles", "Index", "Tenant", new { /*UserId = item.UserId*/ })
+            </button>
+        </div>
+    </div>
+    <div class="animated flipInY col-lg-4 col-md-4  col-sm-6 col-xs-12">
+        <div class="tile-stats">
+            <div class="icon"><i class="fa fa-comments-o"></i></div>
+            <div class="count"> Rent Component </div>
+            <h3> .......... </h3>
+            <button class="btn btn-group-lg pms-btn">
+                @Html.ActionLink("View Rent", "Index", "Rent", new { /*UserId = item.UserId*/ })
+            </button>
+        </div>
+    </div>
+    <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="tile-stats">
+            <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
+            <div class="count"> Maintainance Logs  </div>
+            <h3> ....... </h3>
+            <button class="btn btn-group-lg pms-btn">
+                @Html.ActionLink("View Maintenance Logs", "Index", "Maintenance", new { /*UserId = item.UserId*/ })
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<div class="row top_tiles">
+    <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="tile-stats">
+            <div class="icon"><i class="fa fa-check-square-o"></i></div>
+            <div class="count"> Notifications </div>
+            <h3> ..... </h3>
+            <button class="btn btn-group-lg pms-btn">
+                @Html.ActionLink("View Notifications", "Index", "Notifications", new { /*UserId = item.UserId*/ })
+            </button>
+        </div>
+    </div>
+
+    @*<div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="tile-stats">
+                <div class="icon"><i class="fa fa-caret-square-o-right"></i></div>
+                <div class="count">  Club house Booking</div>
+                <h3> ........ </h3>
+                <button class="btn btn-group-lg pms-btn">
+                    @Html.ActionLink("View Bookings", "Index", "Booking", new { /*UserId = item.UserId*/ })
+                </button>
+            </div>
+        </div>*@
+
+    <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="tile-stats">
+            <div class="icon"><i class="fa fa-comments-o"></i></div>
+            <div class="count"> All System Users  </div>
+            <h3> ........ </h3>
+            <button class="btn btn-group-lg pms-btn">
+                @Html.ActionLink("Manage All System Users", "AdminDashboard", "Users", new { /*UserId = item.UserId*/ })
+            </button>
+        </div>
+    </div>
+
+
+</div>
+
+
+

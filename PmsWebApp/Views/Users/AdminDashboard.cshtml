@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "AdminDashboard";
+}
+
+<h1>AdminDashboard</h1>
+
+@model IEnumerable<PmsWebApi.Models.Users>
+
+@{
+    ViewData["Title"] = "AdminDashboard";
+}
+
+<h1> Admin Dashboard  - User List </h1>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <table class="table">
+                    <thead>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>  Username   </th>
+                            <th>  Email  </th>
+                            <th>  User-role  </th>
+                            <th></th>
+                            <th></th>
+
+
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserRole)
+                                </td>
+
+
+                                <td>
+                                    <button class="btn btn-group-lg pms-btn">
+                                        @Html.ActionLink("Assign User-role", "Edit", new { UserId = item.UserId })
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-group-lg pms-btn">
+                                        @Html.ActionLink("Delete", "Delete", new { UserId = item.UserId })
+                                    </button>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
