@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PmsWebApi.Models.Rent>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1> View Rental Statements</h1>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <table class="table">
+                    <tr>
+                        <th>  Invoice Number </th>
+                        <th>  Lease Numner  </th>
+                        <th>  Payment Reference </th>
+                        <th>  Amount Due </th>
+                        <th>     </th>
+                    </tr>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.InvoiceNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LeaseNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PaymentId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AmountDue)
+                                </td>
+                                <td>
+                                    <button class="btn btn-group-lg pms-btn">
+                                        @Html.ActionLink("View Rental Statement", "Details", new { InvoiceNumber = item.InvoiceNumber })
+                                    </button>
+                                </td>
+
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+               

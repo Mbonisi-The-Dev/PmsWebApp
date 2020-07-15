@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "User Dashboard";
+}
+
+<h1>UserDashboard</h1>
+<h2> Welcome </h2> @*@Context.Session.GetString("UserName")*@
+
+
+
+<div>
+    <button class="btn btn-group-lg pms-btn">
+        @Html.ActionLink("Please Create New Tenant Profile", "Create", "Tenant", new { /*UserId = item.UserId */})
+    </button>
+</div>
+
+@*@Html.ActionLink("Logout ", "Logout", new {/* */})*@
+

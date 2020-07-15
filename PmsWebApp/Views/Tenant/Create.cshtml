@@ -1,0 +1,70 @@
+﻿@model PmsWebApi.Models.Tenant
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <thead></thead>
+        <tbody>
+            @*<tr>
+                <td> User Id </td>
+                <td>
+                    @Html.EditorFor(m => m.UserId, new { htmlAttributes = new { @class = "form-control" }, type = "text" })
+                    @Html.ValidationMessageFor(m => m.UserId)
+                </td>
+            </tr>*@
+
+            <tr>
+                <td> FirstName </td>
+                <td>
+                    @Html.EditorFor(m => m.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(m => m.FirstName)
+                </td>
+            </tr>
+
+            <tr>
+                <td> LastName: </td>
+                <td>
+                    @Html.EditorFor(m => m.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(m => m.LastName)
+                </td>
+            </tr>
+
+            <tr>
+                <td> Cellphone Number: </td>
+                <td>
+
+                    @Html.EditorFor(m => m.CellphoneNumber, new { htmlAttributes = new { @class = "form-control", type = "tel" @*, pattern = "[0-9]"*@ } })
+                    @Html.ValidationMessageFor(m => m.CellphoneNumber)
+                </td>
+            </tr>
+
+            <tr>
+                <td> Id Number </td>
+                <td>
+                    @Html.EditorFor(m => m.IdNumber, new { htmlAttributes = new { @class = "form-control", required = "required", type = "tel" @*, pattern = "[0-9]"*@} })
+                    @Html.ValidationMessageFor(m => m.IdNumber)
+                    
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+
+            <input type="submit" value="Create" class="btn btn-primary btn-group-lg" />
+
+
+        </div>
+    </div>
+}
+

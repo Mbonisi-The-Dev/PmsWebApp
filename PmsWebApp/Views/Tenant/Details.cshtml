@@ -1,0 +1,67 @@
+﻿@model PmsWebApi.Models.Tenant
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+
+@using (Html.BeginForm())
+{
+
+
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel">
+                <div class="x_content">
+                    <table class="table">
+                        <thead></thead>
+                        <tbody>
+                            @*<tr>
+                            <td> User Id </td>
+                            <td> @Html.DisplayFor(m => m.UserId) </td>
+                        </tr>*@
+
+                            <tr>
+                                <td> FirstName </td>
+                                <td>  @Html.DisplayFor(m => m.FirstName) </td>
+                            </tr>
+
+                            <tr>
+                                <td> LastName: </td>
+                                <td>  @Html.DisplayFor(m => m.LastName) </td>
+                            </tr>
+
+                            <tr>
+                                <td> Cellphone Number: </td>
+                                <td>  @Html.DisplayFor(m => m.CellphoneNumber) </td>
+                            </tr>
+
+                            <tr>
+                                <td> Id Number </td>
+                                <td> @Html.DisplayFor(m => m.IdNumber) </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <button class="btn btn-group-lg btn-warning">
+                @Html.ActionLink("Edit", "Edit", new { UserId = Model.UserId })
+            </button>
+
+            <button>
+                @Html.ActionLink("Create New Lease", "Create", "TenantLease", new { IdNumber = Model.IdNumber })
+            </button>
+
+            <button>
+                @Html.ActionLink("View Lease", "Index", "TenantLease", new { IdNumber = Model.IdNumber }, htmlAttributes: null)
+            </button>
+
+        </div>
+    </div>            
+ }
+
+
+

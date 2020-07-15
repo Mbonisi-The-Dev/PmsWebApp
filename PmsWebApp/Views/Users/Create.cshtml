@@ -1,0 +1,62 @@
+﻿@model PmsWebApi.Models.Users
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1> Register New Users </h1>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <thead></thead>
+        <tbody>
+
+            <tr>
+                @*<td>  UserRole  </td>*@
+                <td>
+                    <input data-val="true" data-val-required="The UserRole field is required." htmlAttributes="{ value = 5 }" id="UserRole" name="UserRole" type="hidden" value="5" />
+                    @*@Html.HiddenFor(m => m.UserRole, new { htmlAttributes = new { @value = "5" } })*@
+                    @Html.ValidationMessageFor(m => m.UserRole)
+                </td>
+            </tr>
+
+            <tr>
+                <td>  UserName </td>
+                <td>
+                    @Html.EditorFor(m => m.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </td>
+            </tr>
+
+            <tr>
+                <td> Email: </td>
+                <td>
+                    @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(m => m.Email)
+                </td>
+            </tr>
+
+            <tr>
+                <td>Password </td>
+                <td>
+                    @Html.PasswordFor(m => m.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(m => m.Password)
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+
+            <input type="submit" value="Create" class="btn btn-primary btn-group-lg" />
+
+
+        </div>
+    </div>
+}
+
+
+

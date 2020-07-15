@@ -1,0 +1,44 @@
+﻿@model IList<PmsWebApi.Models.TenantLeaseRenewal>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>View Tenant  Lease Renewals </h1>
+
+
+
+    @Html.ActionLink("Request Renewal", "Create", new { /* */ })
+
+
+
+
+
+
+
+
+<table class="table">
+    <thead>
+
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RenewNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LeaseNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddNotes)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+

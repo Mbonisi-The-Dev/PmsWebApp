@@ -1,0 +1,75 @@
+﻿@model PmsWebApi.Models.Maintenance
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1> Log a Maintenance Call </h1>
+
+@Html.DisplayFor(m => m.LogId)
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <thead></thead>
+        <tbody>
+
+
+            <tr>
+                <td> Id Number</td>
+                <td>
+                    @Html.EditorFor(m => m.IdNumber, new { htmlAttributes = new { @class = "form-control" } })
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td> Log Id:  </td>
+                <td>
+                    @Html.EditorFor(m => m.LogId, new { htmlAttributes = new { @class = "form-control" } })
+                </td>
+            </tr>
+
+            <tr>
+                <td> Call Description: </td>
+                <td>
+                  
+                                @Html.TextAreaFor(m => m.CallDescription, new { htmlAttributes = new { @class = " form-control" } })
+                
+                   
+                </td>
+            </tr>
+
+            <tr>
+                <td> Call Status </td>
+                <td>
+                    @Html.EditorFor(m => m.CallStatus, new { htmlAttributes = new { @class = "form-control" } })
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+
+            <input type="submit" value="Create" class="btn btn-primary btn-group-lg" />
+
+
+        </div>
+    </div>
+}
+
+
+
+
+

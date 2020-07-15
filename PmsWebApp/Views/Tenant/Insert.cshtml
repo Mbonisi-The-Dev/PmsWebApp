@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Insert";
+}
+
+<h1>Insert</h1>
+
+<h1> Tenant Profile </h1>
+<form>
+    <table border="1">
+        <tr>
+            <td> Tenant ID :</td>
+            <td><input id="userId" type="text" /> </td>
+        </tr>
+        <tr>
+            <td>1st Name :</td>
+            <td><input id="firstName" type="text" /></td>
+        </tr>
+        <tr>
+            <td> Last Name :</td>
+            <td><input id="lastName" type="text" /></td>
+        </tr>
+
+        <tr>
+            <td> IdNumber :</td>
+            <td><input id="idNumber" type="text" /></td>
+        </tr>
+
+        <tr>
+            <td> Cellphone Number </td>
+            <td><input id="cellphoneNumber" type="tel" /></td>
+        </tr>
+
+   
+        <tr>
+            <td colspan="2">
+                <input type="button" id="insert"
+                       value="Insert" />
+                <input type="button" id="update"
+                       value="Update" />
+                <input type="button" id="delete"
+                       value="Delete" />
+            </td>
+        </tr>
+    </table>
+    <br />
+    <div id="msg"></div>
+</form>
