@@ -15,7 +15,9 @@ namespace PmsWebApp.Controllers
 {
     public class NotificationsController : Controller
     {
-        private string BaseUrl = "https://pmswebapi-dev.azurewebsites.net/api/";
+        //private string BaseUrl = "https://pmswebapi-dev.azurewebsites.net/api/";
+
+        private readonly string BaseUrl = "	http://MBONISITSHUMA1.af.didata.local:9027/api/";
 
         public async Task<ActionResult> Index()
         {
