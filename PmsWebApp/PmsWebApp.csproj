@@ -2,23 +2,27 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
-    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.AzureKeyVault.HostingStartup" Version="2.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
     <PackageReference Include="Microsoft.OpenApi" Version="1.2.2" />
-    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="3.9.6">
+    <PackageReference Include="Microsoft.ServiceFabric.AspNetCore.Kestrel" Version="4.1.417" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="3.9.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Fabric.MSBuild" Version="1.7.0" />
     <PackageReference Include="PayFast" Version="1.0.4" />
     <PackageReference Include="PayFast.AspNetCore" Version="1.0.4" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.4.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.4.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="5.4.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="5.5.1" />
     <PackageReference Include="Swashbuckle.Core" Version="5.6.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
   </ItemGroup>
