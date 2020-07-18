@@ -19,7 +19,7 @@ namespace PmsWebApp.Controllers
         //private readonly string BaseUrl="https://localhost:44359/api/";
         //private readonly string BaseUrl = "https://pmswebapi-dev.azurewebsites.net/api/";
 
-        private readonly string BaseUrl = "http://mbonisitshuma1.af.didata.local:8162/api/";
+        private readonly string BaseUrl = "http://mbonisitshuma1.af.didata.local:8162/api/";  
 
         public async Task<ActionResult> Index()
         {
